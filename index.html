@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel de Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pedidos</h1>
+    <div class="controls">
+      <label class="vol">
+        Volume
+        <input id="volume" type="range" min="0" max="100" step="1">
+      </label>
+      <button id="btnEnableSound" class="btn" title="Obrigatório por política do navegador">
+        🔊 Habilitar som
+      </button>
+    </div>
+  </header>
+
+  <main id="board" class="board">
+    <!-- Listas e cartões entram aqui via JS -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
