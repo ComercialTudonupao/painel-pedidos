@@ -1,7 +1,7 @@
 // ====== CONFIGURAÇÃO ======
-const KEY      = "";
-const TOKEN    = "";
-const BOARD_ID = "";
+const KEY      = "46ddecd2597afed887b0b010971d97d6";
+const TOKEN    = "ATTAd41d38f5aee213a4f12e03993f8e74bb4b1a08545416ab640edd9b3aecaf53dbCAFC0952";
+const BOARD_ID = "NoURu3ls";
 const REFRESH_MS = 30_000; // 30s
 // ==========================
 
@@ -23,7 +23,7 @@ function enableSound(){
   soundEnabled = true;
 }
 function getVolumeGain(){
-  const pct = parseInt(localStorage.getItem("panel_volume") ?? "70", 10); // padrão 70%
+  const pct = parseInt(localStorage.getItem("panel_volume") ?? "100", 10); // padrão 70%
   // converte 0..100 para ganho (curva suave)
   return Math.max(0, Math.min(1, Math.pow(pct/100, 1.6)));
 }
@@ -50,13 +50,13 @@ function beep(){
   // envelope
   env.gain.setValueAtTime(0.0001, audioCtx.currentTime);
   env.gain.exponentialRampToValueAtTime(0.6, audioCtx.currentTime + 0.02);
-  env.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
+  env.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 20.0); // O som vai durar 5s
 
   osc.connect(env);
   env.connect(masterGain ?? audioCtx.destination);
 
   osc.start();
-  osc.stop(audioCtx.currentTime + 0.36);
+  osc.stop(audioCtx.currentTime + 5.01); // O oscilador para após 5s
 }
 
 function safeHtml(s){
