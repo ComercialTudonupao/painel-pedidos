@@ -5,13 +5,13 @@
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0; background:linear-gradient(180deg,#0b1227,#0f172a 40%,#0f172a); color:var(--txt);
-     font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
 
 .topbar{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
   padding:16px 20px; background:#0c1530; border-bottom:1px solid #1e2a48;
 }
-.topbar h1{margin:0; font-size:22px}
+.topbar h1{margin:0; font-size:24px; } /* Ajuste no título principal */
 .controls{display:flex; align-items:center; gap:12px}
 .btn{
   background:transparent; color:var(--txt); border:1px solid #2b3347;
@@ -22,16 +22,21 @@ body{margin:0; background:linear-gradient(180deg,#0b1227,#0f172a 40%,#0f172a); c
 #volume{width:140px}
 
 .board{
-  display:grid; gap:16px; padding:16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display:flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  gap:16px; padding:16px;
 }
 
 .list{
   background:var(--panel); border:1px solid #24304a; border-radius:var(--radius);
   box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column;
+  width: 300px;
 }
 
 .list__header{
   padding:12px 14px; background:var(--list); border-bottom:1px solid #24304a; font-weight:700;
+  font-size: 2em; /* Aumentado para 1.5em */
 }
 
 .cards{ padding:10px; display:flex; flex-direction:column; gap:10px; }
